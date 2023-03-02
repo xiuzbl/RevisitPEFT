@@ -1,0 +1,15 @@
+{
+    "model_modifier": "adapter_lora",
+    "adapter_type": "normal",
+    "adapter_reduction_factor": 16,
+    "adapter_non_linearity": "relu",
+    "normal_adapter_residual": true,
+    "trainable_param_names": ".*layer_norm.*|.*adapter.*|.*lora_[ab].*",
+    "add_compacter_in_attention": true,
+    "compacter_add_compacter_in_self_attention": false,
+    "compacter_add_compacter_in_cross_attention": false,
+    "lora_rank": 4,
+    "lora_init_scale": 0.01,
+    "lora_modules": ".*SelfAttention|.*EncDecAttention|.*DenseReluDense",
+    "lora_layers": "q|k|v|o|w.*"
+}

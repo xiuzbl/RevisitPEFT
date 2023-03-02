@@ -1,0 +1,613 @@
+Warning: Permanently added '[10.184.185.27]:43505' (ECDSA) to the list of known hosts.
+[2023-01-30 08:16:31,537] [INFO] [runner.py:288:main] Using IP address of 10.184.185.27 for node worker-0
+[2023-01-30 08:16:31,538] [INFO] [runner.py:355:main] cmd = /azure/yingxiu/ENVS/uniskg/bin/python -u -m deepspeed.launcher.launch --world_info=eyJ3b3JrZXItMCI6IFs4LCA5LCAxMCwgMTEsIDEyLCAxMywgMTQsIDE1XX0= --master_addr=10.184.185.27 --master_port=60000 train.py --deepspeed deepspeed/ds_config_zero2.json --seed 42 --cfg=Salesforce/T5_base_finetune_spider_with_cell_value.cfg --run_name=0130_debug_T5-base_finetune_spider_run0 --logging_strategy steps --logging_first_step true --logging_steps 4 --evaluation_strategy steps --eval_steps=1 --metric_for_best_model avr --greater_is_better true --save_strategy steps --save_steps 500 --save_total_limit 5 --load_best_model_at_end --gradient_accumulation_steps 16 --num_train_epochs 50 --adafactor false --learning_rate 5e-5 --do_train --do_eval --do_predict --predict_with_generate --output_dir output/0130_debug_T5-base_finetune_spider_run0 --overwrite_output_dir --per_device_train_batch_size=1 --per_device_eval_batch_size 1 --generation_num_beams=1 --generation_max_length=256 --input_max_length=512 --ddp_find_unused_parameters true --report_to=tensorboard --logging_dir=tb_logs/0130_debug_T5-base_finetune_spider_run0
+[2023-01-30 08:16:39,551] [INFO] [launch.py:73:main] 0 NCCL_VERSION=2.7.8
+[2023-01-30 08:16:39,551] [INFO] [launch.py:80:main] WORLD INFO DICT: {'worker-0': [8, 9, 10, 11, 12, 13, 14, 15]}
+[2023-01-30 08:16:39,552] [INFO] [launch.py:87:main] nnodes=1, num_local_procs=8, node_rank=0
+[2023-01-30 08:16:39,552] [INFO] [launch.py:99:main] global_rank_mapping=defaultdict(<class 'list'>, {'worker-0': [0, 1, 2, 3, 4, 5, 6, 7]})
+[2023-01-30 08:16:39,552] [INFO] [launch.py:100:main] dist_world_size=8
+[2023-01-30 08:16:39,552] [INFO] [launch.py:102:main] Setting CUDA_VISIBLE_DEVICES=8,9,10,11,12,13,14,15
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+01/30/2023 08:22:20 - INFO - filelock -   Lock 140322034519680 acquired on .lock
+01/30/2023 08:22:20 - INFO - filelock -   Lock 139595102793344 acquired on .lock
+01/30/2023 08:22:20 - INFO - filelock -   Lock 140322034519680 released on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 139595102793344 released on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 140413192556216 acquired on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 140413192556216 released on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 139882264022488 acquired on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 139656049581640 acquired on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 139882264022488 released on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 139656049581640 released on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 140560956231072 acquired on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 140560956231072 released on .lock
+01/30/2023 08:22:21 - INFO - filelock -   Lock 140577385586248 acquired on .lock
+01/30/2023 08:22:22 - INFO - filelock -   Lock 140577385586248 released on .lock
+01/30/2023 08:22:22 - INFO - filelock -   Lock 139892463218248 acquired on .lock
+01/30/2023 08:22:22 - INFO - filelock -   Lock 139892463218248 released on .lock
+[2023-01-30 08:22:24,548] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,568] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,612] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,674] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,837] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,868] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,931] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-30 08:22:24,982] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+<utils.configue.Args object at 0x7f0b57ad49b0>
+<utils.configue.Args object at 0x7f9f465724e0>
+task_args.bert.location:task_args.bert.location: t5-base 
+t5-base
+<utils.configue.Args object at 0x7fdabb63fd68>
+<utils.configue.Args object at 0x7fde08502470>
+<utils.configue.Args object at 0x7f3b42cff320>
+<utils.configue.Args object at 0x7f40031b4470><utils.configue.Args object at 0x7fb480b3e7f0>
+<utils.configue.Args object at 0x7ef606bff780>
+
+task_args.bert.location: t5-base
+task_args.bert.location: t5-basetask_args.bert.location:
+ t5-base
+task_args.bert.location: t5-base
+task_args.bert.location: t5-base
+task_args.bert.location: t5-base
+01/30/2023 08:22:43 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:43 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:44 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:45 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:45 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:45 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:45 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:22:45 - WARNING - datasets.builder -   Reusing dataset spider (./data/spider/spider/1.0.0/b92106441d4d0ce75e60b8a70d2c86b66c0eec351ae3af9eb191474d3eefa97d)
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139591033327008 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+Downloading:   0%|          | 0.00/1.21k [00:00<?, ?B/s]Downloading: 100%|██████████| 1.21k/1.21k [00:00<00:00, 1.10MB/s]
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139591033327008 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140412101659952 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140412101659952 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140558791670976 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140558791670976 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139881134665344 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139881134665344 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139891338710320 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139891338710320 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140577423067400 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140577423067400 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139654052252920 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 139654052252920 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140321683431264 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:06 - INFO - filelock -   Lock 140321683431264 released on /home/v-yingxzhao/.cache/huggingface/transformers/91e9fe874e06c44883b535d6c950b8b89d6eaa3298d8e7fb3b2c78039e9f8b7b.a085189636e38420df5e7bdf08ad1b86f1fe33c010079ca7f15437ff95f4fe2b.lock
+01/30/2023 08:23:07 - INFO - filelock -   Lock 139591033370104 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+Downloading:   0%|          | 0.00/792k [00:00<?, ?B/s]Downloading:   4%|▎         | 28.7k/792k [00:00<00:03, 193kB/s]Downloading:  14%|█▍        | 111k/792k [00:00<00:01, 405kB/s] Downloading:  53%|█████▎    | 422k/792k [00:00<00:00, 1.18MB/s]Downloading: 100%|██████████| 792k/792k [00:00<00:00, 1.52MB/s]
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139591033370104 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139881139514000 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139881139514000 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139654052284008 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139654052284008 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140558791711376 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140558791711376 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140319676481432 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140319676481432 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140574946541464 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140574946541464 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140412101700408 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 140412101700408 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139892253602592 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:08 - INFO - filelock -   Lock 139892253602592 released on /home/v-yingxzhao/.cache/huggingface/transformers/684a47ca6257e4ca71f0037771464c5b323e945fbc58697d2fad8a7dd1a2f8ba.3b69006860e7b5d0a63ffdddc01ddcd6b7c318a6f4fd793596552c741734c62d.lock
+01/30/2023 08:23:09 - INFO - filelock -   Lock 139654052252920 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+Downloading:   0%|          | 0.00/1.39M [00:00<?, ?B/s]Downloading:   2%|▏         | 28.7k/1.39M [00:00<00:07, 183kB/s]Downloading:   8%|▊         | 111k/1.39M [00:00<00:03, 385kB/s] Downloading:  34%|███▍      | 471k/1.39M [00:00<00:00, 1.27MB/s]Downloading: 100%|██████████| 1.39M/1.39M [00:00<00:00, 2.51MB/s]
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139654052252920 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140574952380064 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140574952380064 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140558791711376 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140558791711376 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139591033370104 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139591033370104 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139891338750776 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139891338750776 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140412101700408 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140412101700408 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139881139473544 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 139881139473544 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140321957736288 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:10 - INFO - filelock -   Lock 140321957736288 released on /home/v-yingxzhao/.cache/huggingface/transformers/90de37880b5ff5ac7ab70ff0bd369f207e9b74133fa153c163d14c5bb0116207.8627f1bd5d270a9fd2e5a51c8bec3223896587cc3cfe13edeabb0992ab43c529.lock
+01/30/2023 08:23:11 - INFO - filelock -   Lock 139654052283728 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+Downloading:   0%|          | 0.00/892M [00:00<?, ?B/s]Downloading:   0%|          | 3.76M/892M [00:00<00:23, 37.6MB/s]Downloading:   1%|▏         | 13.2M/892M [00:00<00:12, 71.0MB/s]Downloading:   2%|▏         | 21.0M/892M [00:00<00:11, 74.0MB/s]Downloading:   3%|▎         | 28.4M/892M [00:00<00:12, 69.5MB/s]Downloading:   4%|▍         | 35.4M/892M [00:00<00:12, 67.6MB/s]Downloading:   5%|▍         | 42.2M/892M [00:00<00:12, 67.3MB/s]Downloading:   6%|▌         | 50.5M/892M [00:00<00:11, 72.3MB/s]Downloading:   6%|▋         | 57.7M/892M [00:00<00:11, 69.8MB/s]Downloading:   7%|▋         | 66.0M/892M [00:00<00:11, 73.6MB/s]Downloading:   8%|▊         | 74.6M/892M [00:01<00:10, 77.4MB/s]Downloading:   9%|▉         | 82.4M/892M [00:01<00:10, 76.4MB/s]Downloading:  10%|█         | 90.5M/892M [00:01<00:10, 77.8MB/s]Downloading:  11%|█         | 99.2M/892M [00:01<00:09, 80.7MB/s]Downloading:  12%|█▏        | 107M/892M [00:01<00:10, 77.2MB/s] Downloading:  13%|█▎        | 115M/892M [00:01<00:11, 66.6MB/s]Downloading:  14%|█▎        | 122M/892M [00:01<00:11, 67.5MB/s]Downloading:  14%|█▍        | 129M/892M [00:01<00:11, 67.0MB/s]Downloading:  15%|█▌        | 136M/892M [00:01<00:11, 63.6MB/s]Downloading:  16%|█▋        | 146M/892M [00:02<00:10, 74.3MB/s]Downloading:  17%|█▋        | 156M/892M [00:02<00:09, 79.1MB/s]Downloading:  18%|█▊        | 165M/892M [00:02<00:08, 82.5MB/s]Downloading:  19%|█▉        | 173M/892M [00:02<00:08, 82.9MB/s]Downloading:  20%|██        | 182M/892M [00:02<00:08, 83.2MB/s]Downloading:  21%|██▏       | 190M/892M [00:02<00:08, 80.1MB/s]Downloading:  22%|██▏       | 198M/892M [00:02<00:10, 67.4MB/s]Downloading:  23%|██▎       | 207M/892M [00:02<00:09, 72.3MB/s]Downloading:  24%|██▍       | 215M/892M [00:02<00:08, 76.4MB/s]Downloading:  25%|██▌       | 224M/892M [00:03<00:08, 78.2MB/s]Downloading:  26%|██▌       | 232M/892M [00:03<00:08, 80.6MB/s]Downloading:  27%|██▋       | 241M/892M [00:03<00:08, 77.3MB/s]Downloading:  28%|██▊       | 248M/892M [00:03<00:08, 75.2MB/s]Downloading:  29%|██▊       | 256M/892M [00:03<00:08, 75.0MB/s]Downloading:  30%|██▉       | 264M/892M [00:03<00:08, 77.6MB/s]Downloading:  31%|███       | 273M/892M [00:03<00:07, 79.4MB/s]Downloading:  31%|███▏      | 281M/892M [00:03<00:08, 74.4MB/s]Downloading:  32%|███▏      | 288M/892M [00:03<00:08, 71.8MB/s]Downloading:  33%|███▎      | 296M/892M [00:03<00:08, 73.7MB/s]Downloading:  34%|███▍      | 305M/892M [00:04<00:07, 77.2MB/s]Downloading:  35%|███▌      | 313M/892M [00:04<00:07, 75.8MB/s]Downloading:  36%|███▌      | 321M/892M [00:04<00:07, 77.4MB/s]Downloading:  37%|███▋      | 329M/892M [00:04<00:07, 78.3MB/s]Downloading:  38%|███▊      | 337M/892M [00:04<00:07, 78.6MB/s]Downloading:  39%|███▊      | 345M/892M [00:04<00:06, 79.1MB/s]Downloading:  40%|███▉      | 353M/892M [00:04<00:06, 80.1MB/s]Downloading:  41%|████      | 361M/892M [00:04<00:06, 78.8MB/s]Downloading:  41%|████▏     | 369M/892M [00:04<00:06, 78.0MB/s]Downloading:  42%|████▏     | 377M/892M [00:05<00:06, 79.8MB/s]Downloading:  43%|████▎     | 386M/892M [00:05<00:06, 80.8MB/s]Downloading:  44%|████▍     | 394M/892M [00:05<00:06, 82.2MB/s]Downloading:  45%|████▌     | 403M/892M [00:05<00:06, 76.7MB/s]Downloading:  46%|████▌     | 411M/892M [00:05<00:06, 77.4MB/s]Downloading:  47%|████▋     | 418M/892M [00:05<00:06, 73.0MB/s]Downloading:  48%|████▊     | 427M/892M [00:05<00:05, 77.6MB/s]Downloading:  49%|████▉     | 436M/892M [00:05<00:05, 81.0MB/s]Downloading:  50%|████▉     | 445M/892M [00:05<00:05, 81.7MB/s]Downloading:  51%|█████     | 453M/892M [00:05<00:05, 77.6MB/s]Downloading:  52%|█████▏    | 461M/892M [00:06<00:05, 74.5MB/s]Downloading:  53%|█████▎    | 469M/892M [00:06<00:05, 78.3MB/s]Downloading:  54%|█████▎    | 478M/892M [00:06<00:05, 79.3MB/s]Downloading:  54%|█████▍    | 486M/892M [00:06<00:05, 77.3MB/s]Downloading:  55%|█████▌    | 493M/892M [00:06<00:05, 74.9MB/s]Downloading:  56%|█████▌    | 501M/892M [00:06<00:05, 75.3MB/s]Downloading:  57%|█████▋    | 510M/892M [00:06<00:04, 79.5MB/s]Downloading:  58%|█████▊    | 518M/892M [00:06<00:04, 79.2MB/s]Downloading:  59%|█████▉    | 527M/892M [00:06<00:04, 81.3MB/s]Downloading:  60%|██████    | 536M/892M [00:07<00:04, 84.0MB/s]Downloading:  61%|██████    | 544M/892M [00:07<00:04, 83.8MB/s]Downloading:  62%|██████▏   | 552M/892M [00:07<00:04, 83.2MB/s]Downloading:  63%|██████▎   | 561M/892M [00:07<00:03, 85.0MB/s]Downloading:  64%|██████▍   | 570M/892M [00:07<00:03, 82.8MB/s]Downloading:  65%|██████▍   | 578M/892M [00:07<00:03, 78.9MB/s]Downloading:  66%|██████▌   | 586M/892M [00:07<00:03, 79.6MB/s]Downloading:  67%|██████▋   | 594M/892M [00:07<00:03, 79.9MB/s]Downloading:  68%|██████▊   | 603M/892M [00:07<00:03, 82.1MB/s]Downloading:  69%|██████▊   | 611M/892M [00:07<00:03, 76.3MB/s]Downloading:  69%|██████▉   | 619M/892M [00:08<00:03, 74.9MB/s]Downloading:  70%|███████   | 628M/892M [00:08<00:03, 77.5MB/s]Downloading:  71%|███████▏  | 636M/892M [00:08<00:03, 78.4MB/s]Downloading:  72%|███████▏  | 644M/892M [00:08<00:03, 77.2MB/s]Downloading:  73%|███████▎  | 651M/892M [00:08<00:03, 77.1MB/s]Downloading:  74%|███████▍  | 659M/892M [00:08<00:03, 77.2MB/s]Downloading:  75%|███████▍  | 667M/892M [00:08<00:03, 73.0MB/s]Downloading:  76%|███████▌  | 675M/892M [00:08<00:02, 75.8MB/s]Downloading:  77%|███████▋  | 683M/892M [00:08<00:02, 72.9MB/s]Downloading:  77%|███████▋  | 691M/892M [00:09<00:02, 75.1MB/s]Downloading:  78%|███████▊  | 699M/892M [00:09<00:02, 77.4MB/s]Downloading:  79%|███████▉  | 707M/892M [00:09<00:02, 77.3MB/s]Downloading:  80%|████████  | 715M/892M [00:09<00:02, 78.6MB/s]Downloading:  81%|████████  | 723M/892M [00:09<00:02, 77.5MB/s]Downloading:  82%|████████▏ | 731M/892M [00:09<00:02, 77.5MB/s]Downloading:  83%|████████▎ | 738M/892M [00:09<00:02, 75.2MB/s]Downloading:  84%|████████▎ | 746M/892M [00:09<00:01, 75.3MB/s]Downloading:  85%|████████▍ | 754M/892M [00:09<00:01, 75.4MB/s]Downloading:  85%|████████▌ | 761M/892M [00:09<00:01, 75.6MB/s]Downloading:  86%|████████▌ | 769M/892M [00:10<00:01, 73.6MB/s]Downloading:  87%|████████▋ | 776M/892M [00:10<00:01, 73.7MB/s]Downloading:  88%|████████▊ | 784M/892M [00:10<00:01, 73.0MB/s]Downloading:  89%|████████▉ | 792M/892M [00:10<00:01, 76.8MB/s]Downloading:  90%|████████▉ | 801M/892M [00:10<00:01, 78.9MB/s]Downloading:  91%|█████████ | 809M/892M [00:10<00:01, 77.9MB/s]Downloading:  92%|█████████▏| 816M/892M [00:10<00:00, 78.0MB/s]Downloading:  92%|█████████▏| 825M/892M [00:10<00:00, 79.9MB/s]Downloading:  93%|█████████▎| 833M/892M [00:10<00:00, 80.1MB/s]Downloading:  94%|█████████▍| 841M/892M [00:10<00:00, 81.7MB/s]Downloading:  95%|█████████▌| 850M/892M [00:11<00:00, 67.3MB/s]Downloading:  96%|█████████▋| 858M/892M [00:11<00:00, 72.7MB/s]Downloading:  97%|█████████▋| 867M/892M [00:11<00:00, 75.8MB/s]Downloading:  98%|█████████▊| 875M/892M [00:11<00:00, 78.0MB/s]Downloading:  99%|█████████▉| 883M/892M [00:11<00:00, 77.0MB/s]Downloading: 100%|█████████▉| 892M/892M [00:11<00:00, 78.9MB/s]Downloading: 100%|██████████| 892M/892M [00:11<00:00, 76.6MB/s]
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139654052283728 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139891338749600 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139891338749600 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140412101699232 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140412101699232 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140577423067400 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140577423067400 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140558791710200 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140558791710200 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139591033327008 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139591033327008 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139881134665344 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 139881134665344 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140321683431264 acquired on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:23 - INFO - filelock -   Lock 140321683431264 released on /home/v-yingxzhao/.cache/huggingface/transformers/ab4e948915b067f5cb6e5105f6f85044fd717b133f43240db67899a8fc7b29a2.26934c75adf19ceac3c268b721ba353356b7609c45f5627550326f275a2163b4.lock
+01/30/2023 08:23:26 - INFO - __main__ -   Number of parameters: 222883584
+01/30/2023 08:23:26 - INFO - __main__ -   Number of tunable params: 222883584, tunable ratio is 1.0000
+Trainer build successfully.Trainer build successfully.
+
+Trainer build successfully.
+Detected ZeRO Offload and non-DeepSpeed optimizers: This combination should work as long as the custom optimizer has both CPU and GPU implementation (except LAMB)
+Trainer build successfully.
+Trainer build successfully.
+Trainer build successfully.
+Trainer build successfully.
+Trainer build successfully.
+[2023-01-30 08:23:30,003] [INFO] [logging.py:68:log_dist] [Rank 0] DeepSpeed info: version=0.5.6, git-hash=unknown, git-branch=unknown
+[2023-01-30 08:23:30,327] [INFO] [logging.py:68:log_dist] [Rank 0] initializing deepspeed groups
+[2023-01-30 08:23:30,327] [INFO] [logging.py:68:log_dist] [Rank 0] initializing deepspeed model parallel group with size 1
+[2023-01-30 08:23:30,928] [INFO] [logging.py:68:log_dist] [Rank 0] initializing deepspeed expert parallel group with size 1
+[2023-01-30 08:23:30,930] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert data parallel process group with ranks: [0, 1, 2, 3, 4, 5, 6, 7]
+[2023-01-30 08:23:30,933] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [0]
+[2023-01-30 08:23:30,935] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [1]
+[2023-01-30 08:23:30,938] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [2]
+[2023-01-30 08:23:30,940] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [3]
+[2023-01-30 08:23:30,943] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [4]
+[2023-01-30 08:23:30,945] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [5]
+[2023-01-30 08:23:30,948] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [6]
+[2023-01-30 08:23:30,950] [INFO] [logging.py:68:log_dist] [Rank 0] creating expert parallel process group with ranks: [7]
+[2023-01-30 08:23:33,592] [INFO] [engine.py:208:__init__] DeepSpeed Flops Profiler Enabled: False
+[2023-01-30 08:23:33,592] [INFO] [engine.py:871:_configure_optimizer] Removing param_group that has no 'params' in the client Optimizer
+[2023-01-30 08:23:33,592] [INFO] [engine.py:876:_configure_optimizer] Using client Optimizer as basic optimizer
+[2023-01-30 08:23:33,606] [INFO] [engine.py:893:_configure_optimizer] DeepSpeed Basic Optimizer = AdamW
+[2023-01-30 08:23:33,615] [INFO] [utils.py:44:is_zero_supported_optimizer] Checking ZeRO support for optimizer=AdamW type=<class 'transformers.optimization.AdamW'>
+[2023-01-30 08:23:33,615] [WARNING] [engine.py:903:_configure_optimizer] **** You are using ZeRO with an untested optimizer, proceed with caution *****
+[2023-01-30 08:23:33,615] [INFO] [logging.py:68:log_dist] [Rank 0] Creating fp16 ZeRO stage 2 optimizer
+[2023-01-30 08:23:33,615] [INFO] [stage2.py:112:__init__] Reduce bucket size 200000000.0
+[2023-01-30 08:23:33,615] [INFO] [stage2.py:113:__init__] Allgather bucket size 200000000.0
+[2023-01-30 08:23:33,615] [INFO] [stage2.py:114:__init__] CPU Offload: True
+[2023-01-30 08:23:33,615] [INFO] [stage2.py:115:__init__] Round robin gradient partitioning: False
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Creating extension directory /home/v-yingxzhao/.cache/torch_extensions/utils...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+Emitting ninja build file /home/v-yingxzhao/.cache/torch_extensions/utils/build.ninja...
+Building extension module utils...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] c++ -MMD -MF flatten_unflatten.o.d -DTORCH_EXTENSION_NAME=utils -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/include -isystem /azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -isystem /azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/include/TH -isystem /azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/include/THC -isystem /azure/yingxiu/ENVS/uniskg/include/python3.7m -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++14 -c /azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/deepspeed/ops/csrc/utils/flatten_unflatten.cpp -o flatten_unflatten.o 
+[2/2] c++ flatten_unflatten.o -shared -L/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/lib -lc10 -ltorch_cpu -ltorch -ltorch_python -o utils.so
+Loading extension module utils...Loading extension module utils...
+
+Time to load utils op: 55.59605669975281 seconds
+Time to load utils op: 55.81515669822693 seconds
+Loading extension module utils...
+Time to load utils op: 55.694926261901855 seconds
+Loading extension module utils...
+Time to load utils op: 55.59581685066223 seconds
+Loading extension module utils...
+Time to load utils op: 55.79748320579529 seconds
+Loading extension module utils...
+Time to load utils op: 55.60526633262634 seconds
+Loading extension module utils...
+Time to load utils op: 55.799083948135376 seconds
+Loading extension module utils...
+Time to load utils op: 55.599191188812256 seconds
+Rank: 4 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 6 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 1 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 7 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 2 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 3 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 0 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+Rank: 5 partition count [8, 8] and sizes[(27860352, False), (96, False)] 
+[2023-01-30 08:25:29,282] [INFO] [utils.py:806:see_memory_usage] Before initializing optimizer states
+[2023-01-30 08:25:29,283] [INFO] [utils.py:811:see_memory_usage] MA 0.92 GB         Max_MA 0.92 GB         CA 1.75 GB         Max_CA 2 GB 
+[2023-01-30 08:25:29,284] [INFO] [utils.py:816:see_memory_usage] CPU Virtual Memory:  used = 80.83 GB, percent = 5.4%
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.044361114501953125 seconds
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.02199721336364746 seconds
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.0022084712982177734 seconds
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.03319215774536133 seconds
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.012020349502563477 seconds
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.004874229431152344 seconds
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.002422332763671875 seconds
+[2023-01-30 08:25:30,341] [INFO] [utils.py:806:see_memory_usage] After initializing optimizer states
+[2023-01-30 08:25:30,342] [INFO] [utils.py:811:see_memory_usage] MA 0.92 GB         Max_MA 0.92 GB         CA 1.75 GB         Max_CA 2 GB 
+[2023-01-30 08:25:30,342] [INFO] [utils.py:816:see_memory_usage] CPU Virtual Memory:  used = 81.2 GB, percent = 5.4%
+[2023-01-30 08:25:30,342] [INFO] [stage2.py:477:__init__] optimizer state initialized
+[2023-01-30 08:25:30,524] [INFO] [utils.py:806:see_memory_usage] After initializing ZeRO optimizer
+[2023-01-30 08:25:30,525] [INFO] [utils.py:811:see_memory_usage] MA 0.92 GB         Max_MA 0.92 GB         CA 1.75 GB         Max_CA 2 GB 
+[2023-01-30 08:25:30,525] [INFO] [utils.py:816:see_memory_usage] CPU Virtual Memory:  used = 81.2 GB, percent = 5.4%
+[2023-01-30 08:25:30,525] [INFO] [logging.py:68:log_dist] [Rank 0] DeepSpeed Final Optimizer = AdamW
+[2023-01-30 08:25:30,526] [INFO] [engine.py:605:_configure_lr_scheduler] DeepSpeed using client LR scheduler
+[2023-01-30 08:25:30,526] [INFO] [logging.py:68:log_dist] [Rank 0] DeepSpeed LR Scheduler = <torch.optim.lr_scheduler.LambdaLR object at 0x7f03bdb35048>
+[2023-01-30 08:25:30,526] [INFO] [logging.py:68:log_dist] [Rank 0] step=0, skipped=0, lr=[5e-05, 5e-05], mom=[(0.9, 0.999), (0.9, 0.999)]
+[2023-01-30 08:25:30,527] [INFO] [config.py:958:print] DeepSpeedEngine configuration:
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   allreduce_always_fp32 ........ False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   amp_enabled .................. False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   amp_params ................... False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   bfloat16_enabled ............. False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   checkpoint_tag_validation_enabled  True
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   checkpoint_tag_validation_fail  False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   curriculum_enabled ........... False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   curriculum_params ............ False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   dataloader_drop_last ......... False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   disable_allgather ............ False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   dump_state ................... False
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   dynamic_loss_scale_args ...... None
+[2023-01-30 08:25:30,528] [INFO] [config.py:962:print]   eigenvalue_enabled ........... False
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_gas_boundary_resolution  1
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_layer_num ......... 0
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_max_iter .......... 100
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_stability ......... 1e-06
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_tol ............... 0.01
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   eigenvalue_verbose ........... False
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   elasticity_enabled ........... False
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   fp16_enabled ................. False
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   fp16_master_weights_and_gradients  False
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   fp16_mixed_quantize .......... False
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   global_rank .................. 0
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   gradient_accumulation_steps .. 16
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   gradient_clipping ............ 1.0
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   gradient_predivide_factor .... 1.0
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   initial_dynamic_scale ........ 4294967296
+[2023-01-30 08:25:30,529] [INFO] [config.py:962:print]   loss_scale ................... 0
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   memory_breakdown ............. False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   optimizer_legacy_fusion ...... False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   optimizer_name ............... None
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   optimizer_params ............. None
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0}
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   pld_enabled .................. False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   pld_params ................... False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   prescale_gradients ........... False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_change_rate ......... 0.001
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_groups .............. 1
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_offset .............. 1000
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_period .............. 1000
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_rounding ............ 0
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_start_bits .......... 16
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_target_bits ......... 8
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_training_enabled .... False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_type ................ 0
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   quantize_verbose ............. False
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   scheduler_name ............... None
+[2023-01-30 08:25:30,530] [INFO] [config.py:962:print]   scheduler_params ............. None
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   sparse_attention ............. None
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   sparse_gradients_enabled ..... False
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   steps_per_print .............. 2000
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   tensorboard_enabled .......... False
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   tensorboard_job_name ......... DeepSpeedJobName
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   tensorboard_output_path ...... 
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   train_batch_size ............. 128
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   train_micro_batch_size_per_gpu  1
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   use_quantizer_kernel ......... False
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   wall_clock_breakdown ......... False
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   world_size ................... 8
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   zero_allow_untested_optimizer  True
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   zero_config .................. {
+    "stage": 2, 
+    "contiguous_gradients": true, 
+    "reduce_scatter": true, 
+    "reduce_bucket_size": 2.000000e+08, 
+    "allgather_partitions": true, 
+    "allgather_bucket_size": 2.000000e+08, 
+    "overlap_comm": true, 
+    "load_from_fp32_weights": true, 
+    "elastic_checkpoint": true, 
+    "offload_param": null, 
+    "offload_optimizer": {
+        "device": "cpu", 
+        "nvme_path": null, 
+        "buffer_count": 4, 
+        "pin_memory": true, 
+        "pipeline_read": false, 
+        "pipeline_write": false, 
+        "fast_init": false, 
+        "pipeline": false
+    }, 
+    "sub_group_size": 1.000000e+09, 
+    "prefetch_bucket_size": 5.000000e+07, 
+    "param_persistence_threshold": 1.000000e+05, 
+    "max_live_parameters": 1.000000e+09, 
+    "max_reuse_distance": 1.000000e+09, 
+    "gather_fp16_weights_on_model_save": false, 
+    "ignore_unused_parameters": true, 
+    "round_robin_gradients": false, 
+    "legacy_stage1": false
+}
+[2023-01-30 08:25:30,531] [INFO] [config.py:962:print]   zero_enabled ................. True
+[2023-01-30 08:25:30,532] [INFO] [config.py:962:print]   zero_optimization_stage ...... 2
+[2023-01-30 08:25:30,532] [INFO] [config.py:969:print]   json = {
+    "fp16": {
+        "enabled": false, 
+        "loss_scale": 0, 
+        "loss_scale_window": 1000, 
+        "initial_scale_power": 16, 
+        "hysteresis": 2, 
+        "min_loss_scale": 1
+    }, 
+    "zero_optimization": {
+        "stage": 2, 
+        "offload_optimizer": {
+            "device": "cpu", 
+            "pin_memory": true
+        }, 
+        "allgather_partitions": true, 
+        "allgather_bucket_size": 2.000000e+08, 
+        "overlap_comm": true, 
+        "reduce_scatter": true, 
+        "reduce_bucket_size": 2.000000e+08, 
+        "contiguous_gradients": true
+    }, 
+    "gradient_accumulation_steps": 16, 
+    "gradient_clipping": 1.0, 
+    "steps_per_print": 2.000000e+03, 
+    "train_batch_size": 128, 
+    "train_micro_batch_size_per_gpu": 1, 
+    "wall_clock_breakdown": false, 
+    "zero_allow_untested_optimizer": true
+}
+Using /home/v-yingxzhao/.cache/torch_extensions as PyTorch extensions root...
+No modifications detected for re-loaded extension module utils, skipping build step...
+Loading extension module utils...
+Time to load utils op: 0.0006744861602783203 seconds
+***** Running training *****
+  Num examples = 7000
+  Num Epochs = 50
+  Instantaneous batch size per device = 1
+  Total train batch size (w. parallel, distributed & accumulation) = 128
+  Gradient Accumulation steps = 16
+  Total optimization steps = 2700
+  0%|          | 0/2700 [00:00<?, ?it/s]  0%|          | 1/2700 [00:10<7:58:20, 10.63s/it]                                                  {'loss': 4.5862, 'learning_rate': 4.998148148148148e-05, 'epoch': 0.02}
+  0%|          | 1/2700 [00:10<7:58:20, 10.63s/it]***** Running Evaluation *****
+  Num examples = 1034
+  Batch size = 1
+
+  0%|          | 0/130 [00:00<?, ?it/s][A
+  2%|▏         | 2/130 [00:02<02:28,  1.16s/it][A
+  2%|▏         | 3/130 [00:04<03:32,  1.67s/it][A
+  3%|▎         | 4/130 [00:07<04:04,  1.94s/it][A
+  4%|▍         | 5/130 [00:09<04:25,  2.13s/it][A
+  5%|▍         | 6/130 [00:11<04:33,  2.21s/it][A
+  5%|▌         | 7/130 [00:14<04:37,  2.26s/it][A
+  6%|▌         | 8/130 [00:16<04:40,  2.30s/it][A
+  7%|▋         | 9/130 [00:19<04:42,  2.33s/it][A
+  8%|▊         | 10/130 [00:21<04:41,  2.35s/it][A
+  8%|▊         | 11/130 [00:23<04:40,  2.36s/it][A
+  9%|▉         | 12/130 [00:26<04:38,  2.36s/it][A
+ 10%|█         | 13/130 [00:28<04:40,  2.40s/it][A
+ 11%|█         | 14/130 [00:31<04:37,  2.40s/it][A
+ 12%|█▏        | 15/130 [00:33<04:35,  2.39s/it][A
+ 12%|█▏        | 16/130 [00:35<04:33,  2.40s/it][A
+ 13%|█▎        | 17/130 [00:38<04:30,  2.40s/it][A
+ 14%|█▍        | 18/130 [00:40<04:29,  2.41s/it][A
+ 15%|█▍        | 19/130 [00:43<04:26,  2.40s/it][A
+ 15%|█▌        | 20/130 [00:45<04:24,  2.41s/it][A
+ 16%|█▌        | 21/130 [00:47<04:21,  2.40s/it][A
+ 17%|█▋        | 22/130 [00:50<04:26,  2.47s/it][A
+ 18%|█▊        | 23/130 [00:52<04:03,  2.28s/it][A
+ 18%|█▊        | 24/130 [00:54<04:04,  2.31s/it][A
+ 19%|█▉        | 25/130 [00:57<04:03,  2.32s/it][A
+ 20%|██        | 26/130 [00:57<03:11,  1.84s/it][A
+ 21%|██        | 27/130 [01:00<03:25,  1.99s/it][A
+ 22%|██▏       | 28/130 [01:01<02:54,  1.71s/it][A
+ 22%|██▏       | 29/130 [01:03<02:55,  1.73s/it][A
+ 23%|██▎       | 30/130 [01:03<02:25,  1.46s/it][A
+ 24%|██▍       | 31/130 [01:06<02:51,  1.73s/it][A
+ 25%|██▍       | 32/130 [01:08<03:09,  1.93s/it][A
+ 25%|██▌       | 33/130 [01:10<03:20,  2.07s/it][A
+ 26%|██▌       | 34/130 [01:12<03:12,  2.00s/it][A
+ 27%|██▋       | 35/130 [01:15<03:21,  2.12s/it][A
+ 28%|██▊       | 36/130 [01:17<03:27,  2.20s/it][A
+ 28%|██▊       | 37/130 [01:20<03:30,  2.26s/it][A
+ 29%|██▉       | 38/130 [01:22<03:31,  2.30s/it][A
+ 30%|███       | 39/130 [01:24<03:33,  2.34s/it][A
+ 31%|███       | 40/130 [01:27<03:31,  2.35s/it][A
+ 32%|███▏      | 41/130 [01:29<03:29,  2.36s/it][A
+ 32%|███▏      | 42/130 [01:32<03:29,  2.38s/it][A
+ 33%|███▎      | 43/130 [01:34<03:27,  2.38s/it][A
+ 34%|███▍      | 44/130 [01:36<03:27,  2.41s/it][A
+ 35%|███▍      | 45/130 [01:39<03:24,  2.41s/it][A
+ 35%|███▌      | 46/130 [01:41<03:21,  2.40s/it][A
+ 36%|███▌      | 47/130 [01:43<03:04,  2.23s/it][A
+ 37%|███▋      | 48/130 [01:45<03:06,  2.28s/it][A
+ 38%|███▊      | 49/130 [01:48<03:07,  2.31s/it][A
+ 38%|███▊      | 50/130 [01:50<03:07,  2.34s/it][A
+ 39%|███▉      | 51/130 [01:53<03:06,  2.36s/it][A
+ 40%|████      | 52/130 [01:55<03:05,  2.38s/it][A
+ 41%|████      | 53/130 [01:57<03:03,  2.38s/it][A
+ 42%|████▏     | 54/130 [01:59<02:48,  2.22s/it][A
+ 42%|████▏     | 55/130 [02:01<02:36,  2.09s/it][A
+ 43%|████▎     | 56/130 [02:03<02:41,  2.18s/it][A
+ 44%|████▍     | 57/130 [02:05<02:33,  2.11s/it][A
+ 45%|████▍     | 58/130 [02:07<02:14,  1.86s/it][A
+ 45%|████▌     | 59/130 [02:08<02:00,  1.70s/it][A
+ 46%|████▌     | 60/130 [02:10<02:01,  1.73s/it][A
+ 47%|████▋     | 61/130 [02:11<01:55,  1.67s/it][A
+ 48%|████▊     | 62/130 [02:13<01:56,  1.72s/it][A
+ 48%|████▊     | 63/130 [02:14<01:39,  1.49s/it][A
+ 49%|████▉     | 64/130 [02:16<01:56,  1.76s/it][A
+ 50%|█████     | 65/130 [02:19<02:06,  1.95s/it][A
+ 51%|█████     | 66/130 [02:21<02:13,  2.08s/it][A
+ 52%|█████▏    | 67/130 [02:24<02:17,  2.18s/it][A
+ 52%|█████▏    | 68/130 [02:26<02:19,  2.24s/it][A
+ 53%|█████▎    | 69/130 [02:28<02:20,  2.30s/it][A
+ 54%|█████▍    | 70/130 [02:31<02:19,  2.33s/it][A
+ 55%|█████▍    | 71/130 [02:33<02:18,  2.34s/it][A
+ 55%|█████▌    | 72/130 [02:36<02:18,  2.38s/it][A
+ 56%|█████▌    | 73/130 [02:38<02:15,  2.38s/it][A
+ 57%|█████▋    | 74/130 [02:41<02:13,  2.39s/it][A
+ 58%|█████▊    | 75/130 [02:43<02:11,  2.39s/it][A
+ 58%|█████▊    | 76/130 [02:45<02:08,  2.38s/it][A
+ 59%|█████▉    | 77/130 [02:48<02:06,  2.38s/it][A
+ 60%|██████    | 78/130 [02:50<02:04,  2.39s/it][A
+ 61%|██████    | 79/130 [02:52<02:01,  2.39s/it][A
+ 62%|██████▏   | 80/130 [02:55<01:58,  2.37s/it][A
+ 62%|██████▏   | 81/130 [02:57<01:56,  2.38s/it][A
+ 63%|██████▎   | 82/130 [03:00<01:54,  2.38s/it][A
+ 64%|██████▍   | 83/130 [03:02<01:53,  2.41s/it][A
+ 65%|██████▍   | 84/130 [03:04<01:51,  2.42s/it][A
+ 65%|██████▌   | 85/130 [03:07<01:48,  2.40s/it][A
+ 66%|██████▌   | 86/130 [03:09<01:47,  2.45s/it][A
+ 67%|██████▋   | 87/130 [03:12<01:44,  2.44s/it][A
+ 68%|██████▊   | 88/130 [03:14<01:41,  2.42s/it][A
+ 68%|██████▊   | 89/130 [03:15<01:22,  2.01s/it][A
+ 69%|██████▉   | 90/130 [03:17<01:18,  1.96s/it][A
+ 70%|███████   | 91/130 [03:18<01:01,  1.59s/it][A
+ 71%|███████   | 92/130 [03:18<00:46,  1.23s/it][A
+ 72%|███████▏  | 93/130 [03:20<00:46,  1.25s/it][A
+ 72%|███████▏  | 94/130 [03:22<00:57,  1.59s/it][A
+ 73%|███████▎  | 95/130 [03:22<00:43,  1.24s/it][A
+ 74%|███████▍  | 96/130 [03:23<00:33,  1.02it/s][A
+ 75%|███████▍  | 97/130 [03:24<00:31,  1.05it/s][A
+ 75%|███████▌  | 98/130 [03:25<00:35,  1.12s/it][A
+ 76%|███████▌  | 99/130 [03:26<00:31,  1.03s/it][A
+ 77%|███████▋  | 100/130 [03:28<00:43,  1.45s/it][A
+ 78%|███████▊  | 101/130 [03:31<00:50,  1.74s/it][A
+ 78%|███████▊  | 102/130 [03:32<00:40,  1.46s/it][A
+ 79%|███████▉  | 103/130 [03:34<00:46,  1.74s/it][A
+ 80%|████████  | 104/130 [03:36<00:44,  1.73s/it][A
+ 81%|████████  | 105/130 [03:38<00:46,  1.87s/it][A
+ 82%|████████▏ | 106/130 [03:40<00:47,  1.99s/it][A
+ 82%|████████▏ | 107/130 [03:43<00:49,  2.14s/it][A
+ 83%|████████▎ | 108/130 [03:44<00:43,  1.98s/it][A
+ 84%|████████▍ | 109/130 [03:46<00:40,  1.93s/it][A
+ 85%|████████▍ | 110/130 [03:47<00:34,  1.72s/it][A
+ 85%|████████▌ | 111/130 [03:50<00:36,  1.92s/it][A
+ 86%|████████▌ | 112/130 [03:52<00:36,  2.05s/it][A
+ 87%|████████▋ | 113/130 [03:54<00:36,  2.16s/it][A
+ 88%|████████▊ | 114/130 [03:57<00:35,  2.25s/it][A
+ 88%|████████▊ | 115/130 [03:59<00:34,  2.30s/it][A
+ 89%|████████▉ | 116/130 [04:02<00:32,  2.33s/it][A
+ 90%|█████████ | 117/130 [04:04<00:30,  2.35s/it][A
+ 91%|█████████ | 118/130 [04:07<00:28,  2.38s/it][A
+ 92%|█████████▏| 119/130 [04:09<00:26,  2.40s/it][A
+ 92%|█████████▏| 120/130 [04:11<00:24,  2.41s/it][A
+ 93%|█████████▎| 121/130 [04:14<00:21,  2.41s/it][A
+ 94%|█████████▍| 122/130 [04:16<00:19,  2.41s/it][A
+ 95%|█████████▍| 123/130 [04:19<00:16,  2.40s/it][A
+ 95%|█████████▌| 124/130 [04:21<00:14,  2.39s/it][A
+ 96%|█████████▌| 125/130 [04:23<00:12,  2.41s/it][A
+ 97%|█████████▋| 126/130 [04:26<00:09,  2.39s/it][A
+ 98%|█████████▊| 127/130 [04:26<00:05,  1.88s/it][A
+ 98%|█████████▊| 128/130 [04:29<00:04,  2.03s/it][A
+ 99%|█████████▉| 129/130 [04:31<00:02,  2.14s/it][A
+100%|██████████| 130/130 [04:34<00:00,  2.22s/it][Aoutput predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+
+output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+output predictions [[   0 1820 4219 ...    0    0    0]
+ [   0 1820 4219 ...    0    0    0]
+ [   0 7634  834 ...    0    0    0]
+ ...
+ [   0 1451 1761 ...    0    0    0]
+ [   0    3 6789 ...    0    0    0]
+ [   0    3  107 ...    0    0    0]]
+[2023-01-30 08:35:25,413] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13144
+[2023-01-30 08:35:25,414] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13145
+[2023-01-30 08:35:25,415] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13146
+[2023-01-30 08:35:25,415] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13147
+[2023-01-30 08:35:25,416] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13148
+[2023-01-30 08:35:25,417] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13149
+[2023-01-30 08:35:25,418] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13150
+[2023-01-30 08:35:25,419] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 13151
+[2023-01-30 08:35:25,420] [INFO] [launch.py:139:sigkill_handler] Main process received SIGINT, exiting
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/uniskg/bin/deepspeed", line 6, in <module>
+    main()
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/deepspeed/launcher/runner.py", line 357, in main
+    result.wait()
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/subprocess.py", line 971, in wait
+    return self._wait(timeout=timeout)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/subprocess.py", line 1601, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/subprocess.py", line 1559, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

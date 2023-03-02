@@ -1,0 +1,136 @@
+2023-01-16 10:45:09,588 DEBUG   MainThread:94798 [wandb_config.py:_load_defaults():154] no defaults not found in config-defaults.yaml
+2023-01-16 10:45:09,936 DEBUG   MainThread:94798 [meta.py:_setup_code_git():49] probe for git information
+2023-01-16 10:45:10,390 DEBUG   MainThread:94798 [run_manager.py:__init__():547] Initialized sync for /azure/yingxiu/DATA/PET/wandblogs/debug_wandb_run0/1lq7k8h2
+2023-01-16 10:45:10,406 INFO    MainThread:94798 [run_manager.py:wrap_existing_process():1149] wrapping existing process 94139
+2023-01-16 10:45:10,486 INFO    MainThread:94798 [run_manager.py:init_run():928] system metrics and metadata threads started
+2023-01-16 10:45:10,487 INFO    MainThread:94798 [run_manager.py:init_run():967] upserting run before process can begin, waiting at most 10 seconds
+2023-01-16 10:45:10,665 ERROR   Thread-15 :94798 [internal.py:execute():111] 400 response executing GraphQL.
+2023-01-16 10:45:10,666 ERROR   Thread-15 :94798 [internal.py:execute():112] {"errors":[{"message":"invalid project name /azure/yingxiu/DATA/PET/wandblogs/debug_wandb_run0, cannot contain character \"/\"","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2023-01-16 10:45:10,666 ERROR   Thread-15 :94798 [run_manager.py:_upsert_run():997] communication error with wandb 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/__init__.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 784, in upsert_run
+    response = self.gql(
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/retry.py", line 95, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 114, in execute
+    six.reraise(*sys.exc_info())
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/six.py", line 719, in reraise
+    raise value
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 108, in execute
+    return self.client.execute(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 994, in _upsert_run
+    self._run.save(
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/wandb_run.py", line 416, in save
+    upsert_result = api.upsert_run(id=id or self.storage_id, name=self.id, commit=api.git.last_commit,
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/__init__.py", line 79, in wrapper
+    raise CommError(message, err)
+wandb.apis.CommError: invalid project name /azure/yingxiu/DATA/PET/wandblogs/debug_wandb_run0, cannot contain character "/"
+2023-01-16 10:45:10,699 ERROR   MainThread:94798 [run_manager.py:wrap_existing_process():1154] catostrophic launch error
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/__init__.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 784, in upsert_run
+    response = self.gql(
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/retry.py", line 95, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 114, in execute
+    six.reraise(*sys.exc_info())
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/six.py", line 719, in reraise
+    raise value
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 108, in execute
+    return self.client.execute(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 994, in _upsert_run
+    self._run.save(
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/wandb_run.py", line 416, in save
+    upsert_result = api.upsert_run(id=id or self.storage_id, name=self.id, commit=api.git.last_commit,
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/__init__.py", line 79, in wrapper
+    raise CommError(message, err)
+wandb.apis.CommError: invalid project name /azure/yingxiu/DATA/PET/wandblogs/debug_wandb_run0, cannot contain character "/"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 1152, in wrap_existing_process
+    self.init_run()
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 969, in init_run
+    _, self._upsert_run_thread = async_upsert(True, storage_id, env)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/util.py", line 824, in wrapper
+    six.reraise(type(result), result, sys.exc_info()[2])
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/six.py", line 718, in reraise
+    raise value.with_traceback(tb)
+wandb.run_manager.LaunchError: Failed to connect to W&B. See /azure/yingxiu/Yingxiu_Intern/PET/wandb/debug.log for details.
+2023-01-16 10:45:10,699 ERROR   MainThread:94798 [1lq7k8h2:run_manager.py:wrap_existing_process():1154] catostrophic launch error
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/__init__.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 784, in upsert_run
+    response = self.gql(
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/retry.py", line 95, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 114, in execute
+    six.reraise(*sys.exc_info())
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/six.py", line 719, in reraise
+    raise value
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/internal.py", line 108, in execute
+    return self.client.execute(*args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 994, in _upsert_run
+    self._run.save(
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/wandb_run.py", line 416, in save
+    upsert_result = api.upsert_run(id=id or self.storage_id, name=self.id, commit=api.git.last_commit,
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/apis/__init__.py", line 79, in wrapper
+    raise CommError(message, err)
+wandb.apis.CommError: invalid project name /azure/yingxiu/DATA/PET/wandblogs/debug_wandb_run0, cannot contain character "/"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 1152, in wrap_existing_process
+    self.init_run()
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/run_manager.py", line 969, in init_run
+    _, self._upsert_run_thread = async_upsert(True, storage_id, env)
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/wandb/util.py", line 824, in wrapper
+    six.reraise(type(result), result, sys.exc_info()[2])
+  File "/azure/yingxiu/ENVS/pet/lib/python3.8/site-packages/six.py", line 718, in reraise
+    raise value.with_traceback(tb)
+wandb.run_manager.LaunchError: Failed to connect to W&B. See /azure/yingxiu/Yingxiu_Intern/PET/wandb/debug.log for details.

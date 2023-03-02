@@ -1,0 +1,8 @@
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Killing subprocess 11960
+Killing subprocess 11961
+Killing subprocess 11962
+Killing subprocess 11971
+Main process received SIGINT, exiting

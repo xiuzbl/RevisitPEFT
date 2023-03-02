@@ -1,0 +1,1282 @@
+Warning: Permanently added 'node-0,10.12.33.22' (ECDSA) to the list of known hosts.
+[2023-01-25 04:19:52,941] [INFO] [runner.py:288:main] Using IP address of 10.12.33.22 for node node-0
+[2023-01-25 04:19:52,942] [INFO] [runner.py:355:main] cmd = /azure/yingxiu/ENVS/uniskg/bin/python -u -m deepspeed.launcher.launch --world_info=eyJub2RlLTAiOiBbMCwgMSwgMiwgMywgNCwgNSwgNiwgN119 --master_addr=10.12.33.22 --master_port=29500 train.py --deepspeed deepspeed/ds_config_zero2.json --seed 42 --cfg=Salesforce/T5_3b_finetune_sqa.cfg --run_name=ds_T5-3b_finetune_sqa --logging_strategy steps --logging_first_step true --logging_steps 4 --evaluation_strategy steps --eval_steps=100 --metric_for_best_model avr --greater_is_better true --save_strategy steps --save_steps 500 --save_total_limit 5 --load_best_model_at_end --gradient_accumulation_steps 16 --num_train_epochs 50 --adafactor false --learning_rate 5e-5 --do_train --do_eval --do_predict --predict_with_generate --output_dir output/ds_T5-3b_finetune_sqa --overwrite_output_dir --per_device_train_batch_size=1 --per_device_eval_batch_size 1 --generation_num_beams=4 --generation_max_length=128 --input_max_length=1024 --ddp_find_unused_parameters true --report_to=tensorboard --logging_dir=tb_logs/ds_T5-3b_finetune_sqa
+[2023-01-25 04:19:58,070] [INFO] [launch.py:73:main] 0 NCCL_VERSION=2.7.8
+[2023-01-25 04:19:58,071] [INFO] [launch.py:73:main] 0 NCCL_DEBUG_SUBSYS=INIT,GRAPH
+[2023-01-25 04:19:58,071] [INFO] [launch.py:73:main] 0 NCCL_DEBUG=INFO
+[2023-01-25 04:19:58,071] [INFO] [launch.py:73:main] 0 NCCL_SOCKET_IFNAME=eth0
+[2023-01-25 04:19:58,071] [INFO] [launch.py:80:main] WORLD INFO DICT: {'node-0': [0, 1, 2, 3, 4, 5, 6, 7]}
+[2023-01-25 04:19:58,071] [INFO] [launch.py:87:main] nnodes=1, num_local_procs=8, node_rank=0
+[2023-01-25 04:19:58,072] [INFO] [launch.py:99:main] global_rank_mapping=defaultdict(<class 'list'>, {'node-0': [0, 1, 2, 3, 4, 5, 6, 7]})
+[2023-01-25 04:19:58,072] [INFO] [launch.py:100:main] dist_world_size=8
+[2023-01-25 04:19:58,072] [INFO] [launch.py:102:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+01/25/2023 04:24:09 - INFO - filelock -   Lock 139762476029040 acquired on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 139762476029040 released on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 140296146060344 acquired on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 140296146060344 released on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 140183984006144 acquired on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 140183984006144 released on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 139625842009088 acquired on .lock
+01/25/2023 04:24:09 - INFO - filelock -   Lock 139625842009088 released on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 139760672830520 acquired on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 139760672830520 released on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 140410770158536 acquired on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 140410770158536 released on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 140456676754320 acquired on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 140456676754320 released on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 139859961574456 acquired on .lock
+01/25/2023 04:24:10 - INFO - filelock -   Lock 139859961574456 released on .lock
+[2023-01-25 04:24:10,658] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:10,776] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:10,915] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:11,262] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:11,464] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:11,618] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:11,632] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+[2023-01-25 04:24:11,639] [INFO] [distributed.py:47:init_distributed] Initializing torch distributed with backend: nccl
+node-0:4277:4277 [0] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4277:4277 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+
+node-0:4277:4277 [0] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4277:4277 [0] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4277:4277 [0] NCCL INFO NET/IB : No device found.
+node-0:4277:4277 [0] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4277:4277 [0] NCCL INFO Using network Socket
+NCCL version 2.7.8+cuda10.2
+node-0:4284:4284 [7] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4284:4284 [7] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+node-0:4283:4283 [6] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4283:4283 [6] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+node-0:4282:4282 [5] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4282:4282 [5] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+
+node-0:4284:4284 [7] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4284:4284 [7] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4284:4284 [7] NCCL INFO NET/IB : No device found.
+node-0:4284:4284 [7] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4284:4284 [7] NCCL INFO Using network Socket
+node-0:4280:4280 [3] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4280:4280 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+
+node-0:4283:4283 [6] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4283:4283 [6] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4283:4283 [6] NCCL INFO NET/IB : No device found.
+node-0:4283:4283 [6] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4283:4283 [6] NCCL INFO Using network Socket
+node-0:4279:4279 [2] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4279:4279 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+
+node-0:4282:4282 [5] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4282:4282 [5] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4282:4282 [5] NCCL INFO NET/IB : No device found.
+node-0:4282:4282 [5] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4282:4282 [5] NCCL INFO Using network Socket
+node-0:4278:4278 [1] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+node-0:4278:4278 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+
+node-0:4280:4280 [3] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4280:4280 [3] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4280:4280 [3] NCCL INFO NET/IB : No device found.
+node-0:4280:4280 [3] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4280:4280 [3] NCCL INFO Using network Socket
+node-0:4281:4281 [4] NCCL INFO Bootstrap : Using [0]eth0:10.12.33.22<0>
+
+node-0:4279:4279 [2] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4279:4279 [2] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4279:4279 [2] NCCL INFO NET/IB : No device found.
+node-0:4279:4279 [2] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4279:4279 [2] NCCL INFO Using network Socket
+node-0:4281:4281 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+
+node-0:4278:4278 [1] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4278:4278 [1] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4278:4278 [1] NCCL INFO NET/IB : No device found.
+node-0:4278:4278 [1] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4278:4278 [1] NCCL INFO Using network Socket
+
+node-0:4281:4281 [4] misc/ibvwrap.cc:212 NCCL WARN Call to ibv_open_device failed
+
+node-0:4281:4281 [4] transport/net_ib.cc:148 NCCL WARN NET/IB : Unable to open device mlx5_ib0
+node-0:4281:4281 [4] NCCL INFO NET/IB : No device found.
+node-0:4281:4281 [4] NCCL INFO NET/Socket : Using [0]eth0:10.12.33.22<0>
+node-0:4281:4281 [4] NCCL INFO Using network Socket
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0001-0000-3130-444531444235/pci0001:00/0001:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO Attribute coll of node net not found
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4281:5191 [4] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4281:5191 [4] NCCL INFO CPU/0 (1/1/2)
+node-0:4281:5191 [4] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4281:5191 [4] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4281:5191 [4] NCCL INFO CPU/1 (1/1/2)
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4281:5191 [4] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4281:5191 [4] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4281:5191 [4] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4281:5191 [4] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4281:5191 [4] NCCL INFO ==========================================
+node-0:4281:5191 [4] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4281:5191 [4] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4281:5191 [4] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4281:5191 [4] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4281:5191 [4] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4281:5191 [4] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4281:5191 [4] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4281:5191 [4] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_speed, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0002-0000-3130-444531444235/pci0002:00/0002:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO Attribute coll of node net not found
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4278:5190 [1] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4278:5190 [1] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4278:5190 [1] NCCL INFO CPU/0 (1/1/2)
+node-0:4278:5190 [1] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4278:5190 [1] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO CPU/1 (1/1/2)
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0003-0000-3130-444531444235/pci0003:00/0003:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4278:5190 [1] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4278:5190 [1] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4278:5190 [1] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4278:5190 [1] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4278:5190 [1] NCCL INFO ==========================================
+node-0:4278:5190 [1] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4278:5190 [1] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4278:5190 [1] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4278:5190 [1] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4278:5190 [1] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4278:5190 [1] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4278:5190 [1] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4278:5190 [1] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO Attribute coll of node net not found
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4277:5183 [0] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4277:5183 [0] NCCL INFO CPU/0 (1/1/2)
+node-0:4277:5183 [0] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4277:5183 [0] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4277:5183 [0] NCCL INFO CPU/1 (1/1/2)
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4277:5183 [0] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4277:5183 [0] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4277:5183 [0] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4277:5183 [0] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4277:5183 [0] NCCL INFO ==========================================
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4277:5183 [0] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4277:5183 [0] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4277:5183 [0] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4277:5183 [0] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4277:5183 [0] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4277:5183 [0] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4277:5183 [0] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4277:5183 [0] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_speed, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0004-0000-3130-444531444235/pci0004:00/0004:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_speed, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0005-0000-3130-444531444235/pci0005:00/0005:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO Attribute coll of node net not found
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_speed, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0006-0000-3130-444531444235/pci0006:00/0006:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO Attribute coll of node net not found
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4284:5185 [7] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4283:5186 [6] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4283:5186 [6] NCCL INFO CPU/0 (1/1/2)
+node-0:4283:5186 [6] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4284:5185 [7] NCCL INFO CPU/0 (1/1/2)
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4284:5185 [7] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4283:5186 [6] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4283:5186 [6] NCCL INFO CPU/1 (1/1/2)
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4284:5185 [7] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4284:5185 [7] NCCL INFO CPU/1 (1/1/2)
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4284:5185 [7] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4284:5185 [7] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4284:5185 [7] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4284:5185 [7] NCCL INFO ==========================================
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4284:5185 [7] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4279:5189 [2] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4283:5186 [6] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4284:5185 [7] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4284:5185 [7] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4284:5185 [7] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4284:5185 [7] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_speed, ignoring
+node-0:4283:5186 [6] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4284:5185 [7] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4283:5186 [6] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0007-0000-3130-444531444235/pci0007:00/0007:00:00.0/../max_link_width, ignoring
+node-0:4284:5185 [7] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4283:5186 [6] NCCL INFO ==========================================
+node-0:4284:5185 [7] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4283:5186 [6] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4283:5186 [6] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4283:5186 [6] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4283:5186 [6] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4283:5186 [6] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO Attribute coll of node net not found
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO Attribute coll of node net not found
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4279:5189 [2] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_speed, ignoring
+node-0:4282:5187 [5] NCCL INFO Topology detection : could not read /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/47505500-0008-0000-3130-444531444235/pci0008:00/0008:00:00.0/../max_link_width, ignoring
+node-0:4280:5188 [3] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4280:5188 [3] NCCL INFO CPU/0 (1/1/2)
+node-0:4280:5188 [3] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4279:5189 [2] NCCL INFO CPU/0 (1/1/2)
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4279:5189 [2] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4280:5188 [3] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO CPU/1 (1/1/2)
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4282:5187 [5] NCCL INFO Attribute coll of node net not found
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4279:5189 [2] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4280:5188 [3] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4279:5189 [2] NCCL INFO CPU/1 (1/1/2)
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4280:5188 [3] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4282:5187 [5] NCCL INFO KV Convert to int : could not find value of '' in dictionary, falling back to 60
+node-0:4280:5188 [3] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4280:5188 [3] NCCL INFO ==========================================
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4280:5188 [3] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4280:5188 [3] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4280:5188 [3] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4280:5188 [3] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4280:5188 [3] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4280:5188 [3] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4282:5187 [5] NCCL INFO === System : maxWidth 42.0 ===
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4282:5187 [5] NCCL INFO CPU/0 (1/1/2)
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4282:5187 [5] NCCL INFO + PCI[5000.0] - NIC/0
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/100000 (0)
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/200000 (1)
+node-0:4279:5189 [2] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/300000 (2)
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/200000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/400000 (3)
+node-0:4279:5189 [2] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/100000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4279:5189 [2] NCCL INFO ==========================================
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/300000
+node-0:4279:5189 [2] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO + SYS[9.0] - CPU/1
+node-0:4282:5187 [5] NCCL INFO CPU/1 (1/1/2)
+node-0:4279:5189 [2] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/500000 (4)
+node-0:4279:5189 [2] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/300000
+node-0:4279:5189 [2] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4279:5189 [2] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/700000
+node-0:4279:5189 [2] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/600000 (5)
+node-0:4279:5189 [2] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/400000
+node-0:4279:5189 [2] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/800000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/700000 (6)
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/600000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/800000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/100000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/500000
+node-0:4282:5187 [5] NCCL INFO + PCI[12.0] - GPU/800000 (7)
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/700000
+node-0:4282:5187 [5] NCCL INFO               + NVL[42.0] - GPU/500000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/600000
+node-0:4282:5187 [5] NCCL INFO               + NVL[21.0] - GPU/200000
+node-0:4282:5187 [5] NCCL INFO + SYS[9.0] - CPU/0
+node-0:4282:5187 [5] NCCL INFO ==========================================
+node-0:4282:5187 [5] NCCL INFO GPU/100000 :GPU/100000 (0/5000.000000/LOC) GPU/200000 (1/42.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (1/42.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (1/21.000000/NVL) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO GPU/200000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (0/5000.000000/LOC) GPU/300000 (1/42.000000/NVL) GPU/400000 (1/21.000000/NVL) GPU/500000 (3/9.000000/SYS) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (1/21.000000/NVL) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO GPU/300000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (1/42.000000/NVL) GPU/300000 (0/5000.000000/LOC) GPU/400000 (1/21.000000/NVL) GPU/500000 (1/42.000000/NVL) GPU/600000 (3/9.000000/SYS) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO GPU/400000 :GPU/100000 (1/42.000000/NVL) GPU/200000 (1/21.000000/NVL) GPU/300000 (1/21.000000/NVL) GPU/400000 (0/5000.000000/LOC) GPU/500000 (3/9.000000/SYS) GPU/600000 (1/42.000000/NVL) GPU/700000 (3/9.000000/SYS) GPU/800000 (3/9.000000/SYS) CPU/0 (1/12.000000/PHB) CPU/1 (2/9.000000/SYS) 
+node-0:4282:5187 [5] NCCL INFO GPU/500000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (1/42.000000/NVL) GPU/400000 (3/9.000000/SYS) GPU/500000 (0/5000.000000/LOC) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/21.000000/NVL) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO GPU/600000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (1/42.000000/NVL) GPU/500000 (1/21.000000/NVL) GPU/600000 (0/5000.000000/LOC) GPU/700000 (1/42.000000/NVL) GPU/800000 (1/21.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO GPU/700000 :GPU/100000 (1/21.000000/NVL) GPU/200000 (3/9.000000/SYS) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/21.000000/NVL) GPU/600000 (1/42.000000/NVL) GPU/700000 (0/5000.000000/LOC) GPU/800000 (1/42.000000/NVL) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4282:5187 [5] NCCL INFO GPU/800000 :GPU/100000 (3/9.000000/SYS) GPU/200000 (1/21.000000/NVL) GPU/300000 (3/9.000000/SYS) GPU/400000 (3/9.000000/SYS) GPU/500000 (1/42.000000/NVL) GPU/600000 (1/21.000000/NVL) GPU/700000 (1/42.000000/NVL) GPU/800000 (0/5000.000000/LOC) CPU/0 (2/9.000000/SYS) CPU/1 (1/12.000000/PHB) 
+node-0:4281:5191 [4] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4281:5191 [4] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4281:5191 [4] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4281:5191 [4] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4281:5191 [4] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4281:5191 [4] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4281:5191 [4] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4278:5190 [1] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4278:5190 [1] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4278:5190 [1] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4278:5190 [1] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4278:5190 [1] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4278:5190 [1] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4278:5190 [1] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4277:5183 [0] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4277:5183 [0] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4277:5183 [0] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4277:5183 [0] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4277:5183 [0] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4277:5183 [0] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4277:5183 [0] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4284:5185 [7] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4284:5185 [7] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4284:5185 [7] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4284:5185 [7] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4284:5185 [7] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4284:5185 [7] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4284:5185 [7] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4283:5186 [6] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4283:5186 [6] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4283:5186 [6] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4283:5186 [6] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4283:5186 [6] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4283:5186 [6] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4283:5186 [6] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4280:5188 [3] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4280:5188 [3] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4280:5188 [3] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4280:5188 [3] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4280:5188 [3] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4280:5188 [3] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4280:5188 [3] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4279:5189 [2] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4279:5189 [2] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4279:5189 [2] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4279:5189 [2] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4279:5189 [2] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4279:5189 [2] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4279:5189 [2] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4282:5187 [5] NCCL INFO Pattern 4, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4282:5187 [5] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4282:5187 [5] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4282:5187 [5] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4282:5187 [5] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4282:5187 [5] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4282:5187 [5] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4281:5191 [4] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4281:5191 [4] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4281:5191 [4] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4281:5191 [4] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4281:5191 [4] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4281:5191 [4] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4281:5191 [4] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4278:5190 [1] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4278:5190 [1] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4278:5190 [1] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4278:5190 [1] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4278:5190 [1] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4278:5190 [1] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4278:5190 [1] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4277:5183 [0] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4277:5183 [0] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4277:5183 [0] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4277:5183 [0] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4277:5183 [0] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4277:5183 [0] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4277:5183 [0] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4281:5191 [4] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4281:5191 [4] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4281:5191 [4] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4281:5191 [4] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4281:5191 [4] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4281:5191 [4] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4281:5191 [4] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4284:5185 [7] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4284:5185 [7] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4284:5185 [7] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4284:5185 [7] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4284:5185 [7] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4284:5185 [7] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4284:5185 [7] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4283:5186 [6] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4283:5186 [6] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4283:5186 [6] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4283:5186 [6] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4283:5186 [6] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4283:5186 [6] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4283:5186 [6] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4279:5189 [2] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4279:5189 [2] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4279:5189 [2] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4279:5189 [2] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4279:5189 [2] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4279:5189 [2] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4279:5189 [2] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4280:5188 [3] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4280:5188 [3] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4280:5188 [3] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4280:5188 [3] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4280:5188 [3] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4280:5188 [3] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4280:5188 [3] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4282:5187 [5] NCCL INFO Pattern 2, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4282:5187 [5] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4282:5187 [5] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4282:5187 [5] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4282:5187 [5] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4282:5187 [5] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4282:5187 [5] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4278:5190 [1] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4278:5190 [1] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4278:5190 [1] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4278:5190 [1] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4278:5190 [1] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4278:5190 [1] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4278:5190 [1] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4277:5183 [0] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4277:5183 [0] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4277:5183 [0] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4277:5183 [0] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4277:5183 [0] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4277:5183 [0] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4277:5183 [0] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4284:5185 [7] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4284:5185 [7] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4284:5185 [7] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4284:5185 [7] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4284:5185 [7] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4284:5185 [7] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4284:5185 [7] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4283:5186 [6] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4283:5186 [6] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4283:5186 [6] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4283:5186 [6] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4283:5186 [6] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4283:5186 [6] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4283:5186 [6] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4279:5189 [2] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4279:5189 [2] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4279:5189 [2] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4279:5189 [2] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4279:5189 [2] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4279:5189 [2] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4279:5189 [2] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4280:5188 [3] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4280:5188 [3] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4280:5188 [3] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4280:5188 [3] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4280:5188 [3] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4280:5188 [3] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4280:5188 [3] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4282:5187 [5] NCCL INFO Pattern 3, crossNic 0, nChannels 6, speed 21.000000/21.000000, type NVL/PIX, sameChannels 0
+node-0:4282:5187 [5] NCCL INFO  0 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4282:5187 [5] NCCL INFO  1 : GPU/0 GPU/1 GPU/2 GPU/4 GPU/7 GPU/6 GPU/5 GPU/3
+node-0:4282:5187 [5] NCCL INFO  2 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4282:5187 [5] NCCL INFO  3 : GPU/0 GPU/3 GPU/5 GPU/6 GPU/7 GPU/4 GPU/2 GPU/1
+node-0:4282:5187 [5] NCCL INFO  4 : GPU/0 GPU/2 GPU/3 GPU/1 GPU/7 GPU/5 GPU/4 GPU/6
+node-0:4282:5187 [5] NCCL INFO  5 : GPU/0 GPU/6 GPU/4 GPU/5 GPU/7 GPU/1 GPU/3 GPU/2
+node-0:4282:5187 [5] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4279:5189 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4284:5185 [7] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4283:5186 [6] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4277:5183 [0] NCCL INFO Channel 00/12 :    0   1   2   4   7   6   5   3
+node-0:4278:5190 [1] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4282:5187 [5] NCCL INFO Trees [0] 3/-1/-1->5->6|6->5->3/-1/-1 [1] 3/-1/-1->5->6|6->5->3/-1/-1 [2] 6/-1/-1->5->3|3->5->6/-1/-1 [3] 6/-1/-1->5->3|3->5->6/-1/-1 [4] 4/-1/-1->5->7|7->5->4/-1/-1 [5] 7/-1/-1->5->4|4->5->7/-1/-1 [6] 3/-1/-1->5->6|6->5->3/-1/-1 [7] 3/-1/-1->5->6|6->5->3/-1/-1 [8] 6/-1/-1->5->3|3->5->6/-1/-1 [9] 6/-1/-1->5->3|3->5->6/-1/-1 [10] 4/-1/-1->5->7|7->5->4/-1/-1 [11] 7/-1/-1->5->4|4->5->7/-1/-1
+node-0:4281:5191 [4] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4279:5189 [2] NCCL INFO Trees [0] 4/-1/-1->2->1|1->2->4/-1/-1 [1] 4/-1/-1->2->1|1->2->4/-1/-1 [2] 1/-1/-1->2->4|4->2->1/-1/-1 [3] 1/-1/-1->2->4|4->2->1/-1/-1 [4] 3/-1/-1->2->0|0->2->3/-1/-1 [5] -1/-1/-1->2->3|3->2->-1/-1/-1 [6] 4/-1/-1->2->1|1->2->4/-1/-1 [7] 4/-1/-1->2->1|1->2->4/-1/-1 [8] 1/-1/-1->2->4|4->2->1/-1/-1 [9] 1/-1/-1->2->4|4->2->1/-1/-1 [10] 3/-1/-1->2->0|0->2->3/-1/-1 [11] -1/-1/-1->2->3|3->2->-1/-1/-1
+node-0:4280:5188 [3] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4284:5185 [7] NCCL INFO Trees [0] 6/-1/-1->7->4|4->7->6/-1/-1 [1] 6/-1/-1->7->4|4->7->6/-1/-1 [2] 4/-1/-1->7->6|6->7->4/-1/-1 [3] 4/-1/-1->7->6|6->7->4/-1/-1 [4] 5/-1/-1->7->1|1->7->5/-1/-1 [5] 1/-1/-1->7->5|5->7->1/-1/-1 [6] 6/-1/-1->7->4|4->7->6/-1/-1 [7] 6/-1/-1->7->4|4->7->6/-1/-1 [8] 4/-1/-1->7->6|6->7->4/-1/-1 [9] 4/-1/-1->7->6|6->7->4/-1/-1 [10] 5/-1/-1->7->1|1->7->5/-1/-1 [11] 1/-1/-1->7->5|5->7->1/-1/-1
+node-0:4283:5186 [6] NCCL INFO Trees [0] 5/-1/-1->6->7|7->6->5/-1/-1 [1] 5/-1/-1->6->7|7->6->5/-1/-1 [2] 7/-1/-1->6->5|5->6->7/-1/-1 [3] 7/-1/-1->6->5|5->6->7/-1/-1 [4] -1/-1/-1->6->4|4->6->-1/-1/-1 [5] 4/-1/-1->6->0|0->6->4/-1/-1 [6] 5/-1/-1->6->7|7->6->5/-1/-1 [7] 5/-1/-1->6->7|7->6->5/-1/-1 [8] 7/-1/-1->6->5|5->6->7/-1/-1 [9] 7/-1/-1->6->5|5->6->7/-1/-1 [10] -1/-1/-1->6->4|4->6->-1/-1/-1 [11] 4/-1/-1->6->0|0->6->4/-1/-1
+node-0:4277:5183 [0] NCCL INFO Channel 01/12 :    0   1   2   4   7   6   5   3
+node-0:4278:5190 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] -1/-1/-1->1->2|2->1->-1/-1/-1 [3] -1/-1/-1->1->2|2->1->-1/-1/-1 [4] 7/-1/-1->1->3|3->1->7/-1/-1 [5] 3/-1/-1->1->7|7->1->3/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] -1/-1/-1->1->2|2->1->-1/-1/-1 [9] -1/-1/-1->1->2|2->1->-1/-1/-1 [10] 7/-1/-1->1->3|3->1->7/-1/-1 [11] 3/-1/-1->1->7|7->1->3/-1/-1
+node-0:4282:5187 [5] NCCL INFO Setting affinity for GPU 5 to ff,fff00000
+node-0:4281:5191 [4] NCCL INFO Trees [0] 7/-1/-1->4->2|2->4->7/-1/-1 [1] 7/-1/-1->4->2|2->4->7/-1/-1 [2] 2/-1/-1->4->7|7->4->2/-1/-1 [3] 2/-1/-1->4->7|7->4->2/-1/-1 [4] 6/-1/-1->4->5|5->4->6/-1/-1 [5] 5/-1/-1->4->6|6->4->5/-1/-1 [6] 7/-1/-1->4->2|2->4->7/-1/-1 [7] 7/-1/-1->4->2|2->4->7/-1/-1 [8] 2/-1/-1->4->7|7->4->2/-1/-1 [9] 2/-1/-1->4->7|7->4->2/-1/-1 [10] 6/-1/-1->4->5|5->4->6/-1/-1 [11] 5/-1/-1->4->6|6->4->5/-1/-1
+node-0:4279:5189 [2] NCCL INFO Setting affinity for GPU 2 to 0fffff
+node-0:4280:5188 [3] NCCL INFO Trees [0] -1/-1/-1->3->5|5->3->-1/-1/-1 [1] -1/-1/-1->3->5|5->3->-1/-1/-1 [2] 5/-1/-1->3->0|0->3->5/-1/-1 [3] 5/-1/-1->3->0|0->3->5/-1/-1 [4] 1/-1/-1->3->2|2->3->1/-1/-1 [5] 2/-1/-1->3->1|1->3->2/-1/-1 [6] -1/-1/-1->3->5|5->3->-1/-1/-1 [7] -1/-1/-1->3->5|5->3->-1/-1/-1 [8] 5/-1/-1->3->0|0->3->5/-1/-1 [9] 5/-1/-1->3->0|0->3->5/-1/-1 [10] 1/-1/-1->3->2|2->3->1/-1/-1 [11] 2/-1/-1->3->1|1->3->2/-1/-1
+node-0:4284:5185 [7] NCCL INFO Setting affinity for GPU 7 to ff,fff00000
+node-0:4283:5186 [6] NCCL INFO Setting affinity for GPU 6 to ff,fff00000
+node-0:4277:5183 [0] NCCL INFO Channel 02/12 :    0   3   5   6   7   4   2   1
+node-0:4278:5190 [1] NCCL INFO Setting affinity for GPU 1 to 0fffff
+node-0:4281:5191 [4] NCCL INFO Setting affinity for GPU 4 to ff,fff00000
+node-0:4280:5188 [3] NCCL INFO Setting affinity for GPU 3 to 0fffff
+node-0:4277:5183 [0] NCCL INFO Channel 03/12 :    0   3   5   6   7   4   2   1
+node-0:4277:5183 [0] NCCL INFO Channel 04/12 :    0   2   3   1   7   5   4   6
+node-0:4277:5183 [0] NCCL INFO Channel 05/12 :    0   6   4   5   7   1   3   2
+node-0:4277:5183 [0] NCCL INFO Channel 06/12 :    0   1   2   4   7   6   5   3
+node-0:4277:5183 [0] NCCL INFO Channel 07/12 :    0   1   2   4   7   6   5   3
+node-0:4277:5183 [0] NCCL INFO Channel 08/12 :    0   3   5   6   7   4   2   1
+node-0:4277:5183 [0] NCCL INFO Channel 09/12 :    0   3   5   6   7   4   2   1
+node-0:4277:5183 [0] NCCL INFO Channel 10/12 :    0   2   3   1   7   5   4   6
+node-0:4277:5183 [0] NCCL INFO Channel 11/12 :    0   6   4   5   7   1   3   2
+node-0:4277:5183 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+node-0:4277:5183 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 3/-1/-1->0->-1|-1->0->3/-1/-1 [3] 3/-1/-1->0->-1|-1->0->3/-1/-1 [4] 2/-1/-1->0->-1|-1->0->2/-1/-1 [5] 6/-1/-1->0->-1|-1->0->6/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 3/-1/-1->0->-1|-1->0->3/-1/-1 [9] 3/-1/-1->0->-1|-1->0->3/-1/-1 [10] 2/-1/-1->0->-1|-1->0->2/-1/-1 [11] 6/-1/-1->0->-1|-1->0->6/-1/-1
+node-0:4277:5183 [0] NCCL INFO Setting affinity for GPU 0 to 0fffff
+node-0:4282:5187 [5] NCCL INFO Channel 00 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 00 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 00 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 00 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 00 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 00 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 00 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 00 : 0[100000] -> 1[200000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 00 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 00 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 00 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 00 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 00 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 00 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 00 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 01 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 01 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 01 : 0[100000] -> 1[200000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 01 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 01 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 01 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 01 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 01 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 01 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 01 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 01 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 01 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 01 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 01 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 01 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 02 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 02 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 02 : 0[100000] -> 3[400000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 02 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 02 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 02 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 02 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 02 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 02 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 02 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 02 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 02 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 02 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 02 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 02 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 03 : 0[100000] -> 3[400000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 03 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 03 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 03 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 03 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 03 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 03 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 03 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 03 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 03 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 03 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 03 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 03 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 03 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 03 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 04 : 1[200000] -> 7[800000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 04 : 0[100000] -> 2[300000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 04 : 3[400000] -> 1[200000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 04 : 5[600000] -> 4[500000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 04 : 2[300000] -> 3[400000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 04 : 6[700000] -> 0[100000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 04 : 4[500000] -> 6[700000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 04 : 7[800000] -> 5[600000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 04 : 6[700000] -> 4[500000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 04 : 3[400000] -> 2[300000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 04 : 1[200000] -> 3[400000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 04 : 5[600000] -> 7[800000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 04 : 2[300000] -> 0[100000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 04 : 4[500000] -> 5[600000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 04 : 7[800000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 05 : 6[700000] -> 4[500000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 05 : 0[100000] -> 6[700000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 05 : 3[400000] -> 2[300000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 05 : 5[600000] -> 7[800000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 05 : 1[200000] -> 3[400000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 05 : 2[300000] -> 0[100000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 05 : 4[500000] -> 5[600000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 05 : 7[800000] -> 1[200000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 05 : 2[300000] -> 3[400000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 05 : 6[700000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 05 : 3[400000] -> 1[200000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 05 : 5[600000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 05 : 1[200000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 05 : 4[500000] -> 6[700000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 05 : 7[800000] -> 5[600000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 06 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 06 : 0[100000] -> 1[200000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 06 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 06 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 06 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 06 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 06 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 06 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 06 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 06 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 06 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 06 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 06 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 06 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 06 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 07 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 07 : 0[100000] -> 1[200000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 07 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 07 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 07 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 07 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 07 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 07 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 07 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 07 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 07 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 07 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 07 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 07 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 07 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 08 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 08 : 0[100000] -> 3[400000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 08 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 08 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 08 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 08 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 08 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 08 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 08 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 08 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 08 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 08 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 08 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 08 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 08 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 09 : 0[100000] -> 3[400000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 09 : 1[200000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 09 : 3[400000] -> 5[600000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 09 : 2[300000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 09 : 6[700000] -> 7[800000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 09 : 5[600000] -> 6[700000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 09 : 4[500000] -> 2[300000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 09 : 7[800000] -> 4[500000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 09 : 1[200000] -> 2[300000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 09 : 3[400000] -> 0[100000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 09 : 2[300000] -> 4[500000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 09 : 6[700000] -> 5[600000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 09 : 5[600000] -> 3[400000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 09 : 4[500000] -> 7[800000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 09 : 7[800000] -> 6[700000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 10 : 1[200000] -> 7[800000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 10 : 0[100000] -> 2[300000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 10 : 3[400000] -> 1[200000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 10 : 2[300000] -> 3[400000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 10 : 6[700000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 10 : 5[600000] -> 4[500000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 10 : 4[500000] -> 6[700000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 10 : 7[800000] -> 5[600000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 10 : 6[700000] -> 4[500000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 10 : 3[400000] -> 2[300000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 10 : 1[200000] -> 3[400000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 10 : 2[300000] -> 0[100000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 10 : 5[600000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 10 : 4[500000] -> 5[600000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 10 : 7[800000] -> 1[200000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 11 : 6[700000] -> 4[500000] via P2P/IPC
+node-0:4277:5183 [0] NCCL INFO Channel 11 : 0[100000] -> 6[700000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 11 : 3[400000] -> 2[300000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 11 : 2[300000] -> 0[100000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 11 : 1[200000] -> 3[400000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 11 : 5[600000] -> 7[800000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 11 : 4[500000] -> 5[600000] via P2P/IPC
+node-0:4284:5185 [7] NCCL INFO Channel 11 : 7[800000] -> 1[200000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO Channel 11 : 2[300000] -> 3[400000] via P2P/IPC
+node-0:4283:5186 [6] NCCL INFO Channel 11 : 6[700000] -> 0[100000] via P2P/IPC
+node-0:4280:5188 [3] NCCL INFO Channel 11 : 3[400000] -> 1[200000] via P2P/IPC
+node-0:4278:5190 [1] NCCL INFO Channel 11 : 1[200000] -> 7[800000] via P2P/IPC
+node-0:4282:5187 [5] NCCL INFO Channel 11 : 5[600000] -> 4[500000] via P2P/IPC
+node-0:4281:5191 [4] NCCL INFO Channel 11 : 4[500000] -> 6[700000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4284:5185 [7] NCCL INFO Channel 11 : 7[800000] -> 5[600000] via P2P/IPC
+node-0:4279:5189 [2] NCCL INFO comm 0x7fb340001060 rank 2 nranks 8 cudaDev 2 busId 300000 - Init COMPLETE
+node-0:4277:5183 [0] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4277:5183 [0] NCCL INFO comm 0x7f1c30001060 rank 0 nranks 8 cudaDev 0 busId 100000 - Init COMPLETE
+node-0:4277:4277 [0] NCCL INFO Launch mode Parallel
+node-0:4280:5188 [3] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4283:5186 [6] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4280:5188 [3] NCCL INFO comm 0x7f7e7c001060 rank 3 nranks 8 cudaDev 3 busId 400000 - Init COMPLETE
+node-0:4283:5186 [6] NCCL INFO comm 0x7fbdf0001060 rank 6 nranks 8 cudaDev 6 busId 700000 - Init COMPLETE
+node-0:4278:5190 [1] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4282:5187 [5] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4281:5191 [4] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4278:5190 [1] NCCL INFO comm 0x7f330c001060 rank 1 nranks 8 cudaDev 1 busId 200000 - Init COMPLETE
+node-0:4282:5187 [5] NCCL INFO comm 0x7efc88001060 rank 5 nranks 8 cudaDev 5 busId 600000 - Init COMPLETE
+node-0:4281:5191 [4] NCCL INFO comm 0x7f1bf0001060 rank 4 nranks 8 cudaDev 4 busId 500000 - Init COMPLETE
+node-0:4284:5185 [7] NCCL INFO 12 coll channels, 16 p2p channels, 2 p2p channels per peer
+node-0:4284:5185 [7] NCCL INFO comm 0x7f9898001060 rank 7 nranks 8 cudaDev 7 busId 800000 - Init COMPLETE
+<utils.configue.Args object at 0x7f1cf9de8f60><utils.configue.Args object at 0x7fbe9ae5f400><utils.configue.Args object at 0x7efd2949b4a8>
+<utils.configue.Args object at 0x7f33abe6b470>
+<utils.configue.Args object at 0x7f1c8dd4f400>
+<utils.configue.Args object at 0x7f993a85c4a8>
+
+
+<utils.configue.Args object at 0x7fb3eaa6e400>
+<utils.configue.Args object at 0x7f7f1d24c438>
+task_args.bert.location: task_args.bert.location:task_args.bert.location:task_args.bert.location:task_args.bert.location: t5-3btask_args.bert.location: task_args.bert.location: task_args.bert.location:  t5-3b t5-3b t5-3bt5-3b
+
+t5-3b
+t5-3b
+t5-3b
+
+
+
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+    utils.size_str(self.info.post_processing_size or 0),
+    utils.size_str(self.info.post_processing_size or 0),OSError: 
+Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+    utils.size_str(self.info.post_processing_size or 0),
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+    utils.size_str(self.info.post_processing_size or 0),
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+    utils.size_str(self.info.post_processing_size or 0),
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+01/25/2023 04:24:17 - WARNING - datasets.builder -   Using custom data configuration default
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+    utils.size_str(self.info.post_processing_size or 0),
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+    utils.size_str(self.info.post_processing_size or 0),
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+Traceback (most recent call last):
+  File "train.py", line 233, in <module>
+    main()
+  File "train.py", line 106, in main
+    cache_dir=task_args.dataset.data_store_path)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/load.py", line 852, in load_dataset
+    use_auth_token=use_auth_token,
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/datasets/builder.py", line 561, in download_and_prepare
+    utils.size_str(self.info.post_processing_size or 0),
+OSError: Not enough disk space. Needed: Unknown size (download: Unknown size, generated: Unknown size, post-processed: Unknown size)
+[2023-01-25 04:24:18,382] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4277
+[2023-01-25 04:24:18,383] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4278
+[2023-01-25 04:24:18,383] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4279
+[2023-01-25 04:24:18,383] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4280
+[2023-01-25 04:24:18,384] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4281
+[2023-01-25 04:24:18,385] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4282
+[2023-01-25 04:24:18,385] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4283
+[2023-01-25 04:24:18,385] [INFO] [launch.py:131:sigkill_handler] Killing subprocess 4284
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/deepspeed/launcher/launch.py", line 167, in <module>
+    main()
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/deepspeed/launcher/launch.py", line 156, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/deepspeed/launcher/launch.py", line 137, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/azure/yingxiu/ENVS/uniskg/bin/python', '-u', 'train.py', '--local_rank=7', '--deepspeed', 'deepspeed/ds_config_zero2.json', '--seed', '42', '--cfg=Salesforce/T5_3b_finetune_sqa.cfg', '--run_name=ds_T5-3b_finetune_sqa', '--logging_strategy', 'steps', '--logging_first_step', 'true', '--logging_steps', '4', '--evaluation_strategy', 'steps', '--eval_steps=100', '--metric_for_best_model', 'avr', '--greater_is_better', 'true', '--save_strategy', 'steps', '--save_steps', '500', '--save_total_limit', '5', '--load_best_model_at_end', '--gradient_accumulation_steps', '16', '--num_train_epochs', '50', '--adafactor', 'false', '--learning_rate', '5e-5', '--do_train', '--do_eval', '--do_predict', '--predict_with_generate', '--output_dir', 'output/ds_T5-3b_finetune_sqa', '--overwrite_output_dir', '--per_device_train_batch_size=1', '--per_device_eval_batch_size', '1', '--generation_num_beams=4', '--generation_max_length=128', '--input_max_length=1024', '--ddp_find_unused_parameters', 'true', '--report_to=tensorboard', '--logging_dir=tb_logs/ds_T5-3b_finetune_sqa']' returned non-zero exit status 1.

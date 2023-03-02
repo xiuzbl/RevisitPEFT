@@ -1,0 +1,59 @@
+description: Amulet configs for my PEFT.
+
+target:
+  service: sing
+  #* v100
+  workspace_name: csr-sing-ws01-westus2
+  name: csr-sing-wu2
+  #* a100
+  # workspace_name: csr-sing-icode-ws01-westus3
+  # name: csr-sing-icode-wu3
+
+environment:
+  # image: amlt-sing/pytorch-1.8.0-cuda11.1-cudnn8-devel
+  image: amlt-sing/deepspeed-0.4-pytorch-1.8.0-cuda11.1-cudnn8-devel
+  setup:
+    - set -x
+    # - cd /mnt/users/yingxiu/Yingxiu_Intern/PET/
+    - cd /azure/yingxiu/Yingxiu_Intern/PET/
+    - pip install -r requirements.txt 
+    - nvcc --version
+    # - pip install deepspeed
+    # - pip install datasets
+    # - pip install nltk
+    # - python3 -c "import nltk; nltk.download('punkt')"
+
+storage:
+  v100_storage: 
+    storage_account_name: sdrgmainz01wus2
+    container_name: user
+    mount_dir: /azure
+  # model_storage:
+  #   storage_account_name: sdrgprmblob01scus
+  #   container_name: data
+  #   mount_dir: /mnt
+  #   mount_options: ['--file-cache-timeout-in-seconds=60']
+  # data_storage:
+  #   storage_account_name: sdrgstorage01wus2
+  #   container_name: amulet
+  #   mount_dir: /azure
+
+  
+code:
+  local_dir: $CONFIG_DIR/
+
+jobs:
+# - name: adapter_8gpu_t5-3b_run0
+# - name: wandb_debug
+# - name: finetune_8gpu_t5-3b_run02
+- name: adapter_8gpu_t5-3b_run1c
+  sku: G8
+  # sku: G1
+  command:
+  - ls -l /azure/yingxiu/
+  # - ls -l /mnt/users/yingxiu/
+  # - cd /mnt/users/yingxiu/Yingxiu_Intern/PET/
+  - cd /azure/yingxiu/Yingxiu_Intern/PET/
+  - cat scripts/ds_run.sh
+  - bash scripts/ds_run.sh
+  - echo FINISH! Congrats!!!

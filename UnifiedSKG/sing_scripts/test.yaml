@@ -1,0 +1,8 @@
+target:
+  service: sing
+  workspace_name: csr-sing-nlk-ws01-scus
+environment:
+  image: amlt-sing/deepspeed-0.4-pytorch-1.8.0-cuda11.1-cudnn8-devel
+  setup:
+    - set -x
+    - nvcc --version

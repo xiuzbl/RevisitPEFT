@@ -1,0 +1,101 @@
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+INFO:filelock:Lock 140365216261120 acquired on .lock
+INFO:filelock:Lock 140365216261120 released on .lock
+INFO:filelock:Lock 140265886151848 acquired on .lock
+INFO:filelock:Lock 140265886151848 released on .lock
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+INFO:filelock:Lock 140161768924328 acquired on .lock
+INFO:filelock:Lock 140161768924328 released on .lock
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+INFO:filelock:Lock 140387874858152 acquired on .lock
+INFO:filelock:Lock 140387874858152 released on .lock
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+[W Context.cpp:69] Warning: torch.set_deterministic is in beta, and its design and  functionality may change in the future. (function operator())
+INFO:filelock:Lock 139781881345192 acquired on .lock
+INFO:filelock:Lock 139781881345192 released on .lock
+INFO:filelock:Lock 140695728583848 acquired on .lock
+INFO:filelock:Lock 140695728583848 released on .lock
+INFO:filelock:Lock 140258906739824 acquired on .lock
+INFO:filelock:Lock 140258906739824 released on .lock
+INFO:filelock:Lock 140668309120224 acquired on .lock
+INFO:filelock:Lock 140668309120224 released on .lock
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "train.py", line 230, in <module>
+Traceback (most recent call last):
+  File "train.py", line 230, in <module>
+  File "train.py", line 230, in <module>
+Traceback (most recent call last):
+  File "train.py", line 230, in <module>
+  File "train.py", line 230, in <module>
+  File "train.py", line 230, in <module>
+  File "train.py", line 230, in <module>
+    main()    main()Traceback (most recent call last):
+
+        
+        main()  File "train.py", line 230, in <module>
+  File "train.py", line 41, in main
+    main()main()main()
+  File "train.py", line 41, in main
+main()
+
+
+
+  File "train.py", line 41, in main
+    training_args, = parser.parse_args_into_dataclasses()  File "train.py", line 41, in main
+  File "train.py", line 41, in main
+  File "train.py", line 41, in main
+  File "train.py", line 41, in main
+    training_args, = parser.parse_args_into_dataclasses()
+    training_args, = parser.parse_args_into_dataclasses()    
+    training_args, = parser.parse_args_into_dataclasses()  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+    training_args, = parser.parse_args_into_dataclasses()    training_args, = parser.parse_args_into_dataclasses()    training_args, = parser.parse_args_into_dataclasses()
+    main()  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+
+
+
+
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")ValueError:   File "train.py", line 41, in main
+            
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueErrorValueError
+    
+ValueError: 
+: Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']: Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']ValueError: training_args, = parser.parse_args_into_dataclasses()ValueError: Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']
+ValueError
+
+Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']
+
+Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']
+: Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/transformers/hf_argparser.py", line 200, in parse_args_into_dataclasses
+
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--adapter_reduction_size=6']
+Traceback (most recent call last):
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/distributed/launch.py", line 260, in <module>
+    main()
+  File "/azure/yingxiu/ENVS/uniskg/lib/python3.7/site-packages/torch/distributed/launch.py", line 256, in main
+    cmd=cmd)
+subprocess.CalledProcessError: Command '['/azure/yingxiu/ENVS/uniskg/bin/python', '-u', 'train.py', '--local_rank=7', '--seed', '42', '--cfg=Salesforce/T5_base_adapter_spider_with_cell_value.cfg', '--run_name=T5-base_adapter_spider_reduction6_run0', '--logging_strategy', 'steps', '--logging_first_step', 'true', '--logging_steps', '10', '--evaluation_strategy', 'steps', '--eval_steps', '500', '--metric_for_best_model', 'avr', '--greater_is_better', 'true', '--save_strategy', 'steps', '--save_steps', '500', '--save_total_limit', '1', '--load_best_model_at_end', '--gradient_accumulation_steps', '8', '--num_train_epochs', '400', '--adafactor', 'true', '--learning_rate', '5e-5', '--do_train', '--do_eval', '--do_predict', '--predict_with_generate', '--output_dir', 'output/T5-base_adapter_spider_reduction6_run0', '--overwrite_output_dir', '--per_device_train_batch_size=2', '--per_device_eval_batch_size', '8', '--generation_num_beams=1', '--generation_max_length=256', '--input_max_length=512', '--ddp_find_unused_parameters', 'true', '--report_to=tensorboard', '--logging_dir=tb_logs/T5-base_adapter_spider_reduction6_run0', '--adapter_reduction_size=6']' returned non-zero exit status 1.

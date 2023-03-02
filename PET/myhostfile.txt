@@ -1,0 +1,2 @@
+machine1 slots=8
+machine2 slots=8

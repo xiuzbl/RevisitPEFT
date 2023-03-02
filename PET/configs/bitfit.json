@@ -1,0 +1,6 @@
+{
+  "bitfit_modules": ".*",
+  "bitfit_layers": "q|k|v|o|wi_[01]|w_o",
+  "trainable_param_names" : ".*bias|.*layer_norm.*",
+  "model_modifier": "bitfit"
+}

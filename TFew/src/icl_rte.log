@@ -1,0 +1,6 @@
+2023-01-31 16:04:25.092549: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "ticl/test_icl.py", line 7, in <module>
+    from data import get_dataset_reader
+ModuleNotFoundError: No module named 'data'

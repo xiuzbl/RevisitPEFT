@@ -1,0 +1,41 @@
+{
+  "comms_logger": {
+    "enabled": false,
+    "verbose": false,
+    "prof_all": false,
+    "debug": false
+  },
+
+  "gradient_accumulation_steps":4,
+<<<<<<< HEAD
+  "train_micro_batch_size_per_gpu": 4,
+=======
+  "train_micro_batch_size_per_gpu": 8,
+>>>>>>> b5b18fab383d2b966935c5912802eeae7f161a27
+  "steps_per_print": 20000000,
+  "gradient_clipping": 1.0,
+
+  "fp16": {
+        "enabled": false,
+        "loss_scale": 0,
+        "loss_scale_window": 1000,
+        "hysteresis": 2,
+        "min_loss_scale": 1
+    },
+ 
+  "zero_optimization": {
+       "stage": 2,
+       "allgather_partitions": true,
+       "allgather_bucket_size": 2e8,
+       "overlap_comm": true,
+       "reduce_scatter": true,
+       "reduce_bucket_size": 2e8,
+       "contiguous_gradients": true,
+        "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true
+        }
+      },
+  "zero_allow_untested_optimizer": true,
+  "wall_clock_breakdown": false
+}

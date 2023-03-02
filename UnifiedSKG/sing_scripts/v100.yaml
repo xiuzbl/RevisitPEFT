@@ -1,0 +1,67 @@
+description: Amulet configs for my UnifiedSKG
+
+target:
+  service: sing
+  # workspace_name: csr-sing-ws01-westus2 
+  # name: csr-sing-wu2
+  # workspace_name: csr-sing-nlk-ws01-scus
+  # name: csr-sing-nlk-sc 
+  workspace_name: csr-sing-speech-ws01-scus
+  name: csr-sing-speech-sc
+
+
+environment:
+  # image: amlt-sing/pytorch-1.8.0-cuda11.1-cudnn8-devel
+  image: amlt-sing/deepspeed-0.4-pytorch-1.8.0-cuda11.1-cudnn8-devel
+  setup:
+    - set -x
+    # - cd /mnt/users/yingxiu/Yingxiu_Intern/PET/
+    # - cd /azure/yingxiu/Yingxiu_Intern/PET/
+    # - pip install -r requirements.txt 
+    - nvcc --version
+    # - pip install deepspeed
+    # - pip install datasets
+    # - pip install nltk
+    # - python3 -c "import nltk; nltk.download('punkt')"
+
+storage:
+  v100_storage: 
+    storage_account_name: sdrgmainz01wus2
+    container_name: user
+    mount_dir: /azure
+  # model_storage:
+  #   storage_account_name: sdrgprmblob01scus
+  #   container_name: data
+  #   mount_dir: /mnt
+  #   mount_options: ['--file-cache-timeout-in-seconds=60']
+  # data_storage:
+  #   storage_account_name: sdrgstorage01wus2
+  #   container_name: amulet
+  #   mount_dir: /azure
+
+  
+code:
+  local_dir: $CONFIG_DIR/
+
+jobs:
+# - name: adapter_8gpu_t5-3b_run0
+# - name: wandb_debug
+# - name: finetune_8gpu_t5-3b_run02
+# - name: skg_t5-base_finetune_spider
+# - name: skg_t5-3b_finetune_spider_run1
+# - name: skg_t5-3b_adapter_spider
+- name: skg_T5-3b_finetune_sqa_run0
+# - name: skg_t5-3b_adapter_spider_reduction2_run1
+  sku: G8
+  # sku: G1
+  sla_tier: Basic
+  command:
+  - ls -l /azure/yingxiu/
+  # - ls -l /mnt/users/yingxiu/
+  # - cd /mnt/users/yingxiu/Yingxiu_Intern/PET/
+  - cd /azure/yingxiu/Yingxiu_Intern/UnifiedSKG/
+  # - cat scripts/run.sh
+  # - bash scripts/run.sh
+  - cat scripts/dsrun.sh
+  - bash scripts/dsrun.sh
+  - echo FINISH! Congrats!!!
